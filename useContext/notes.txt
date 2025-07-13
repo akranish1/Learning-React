@@ -1,0 +1,17 @@
+useContext is a hook that allows you to consume values from a context directly, 
+without prop drilling (passing props through many levels of nested components)(parent,child,subchild).
+
+Before using useContext, we need to create a context using React.createContext().
+
+const contextValue = useContext(MyContext);
+MyContext: The context object is created using React.createContext().
+contextValue: The current context value that we can use in our component.
+
+When NOT to use useContext
+If the data doesn’t need to be shared globally, prefer props.
+
+Problem:
+You want to know if the user is logged in and who they are — on any page of your app (dashboard, profile, navbar, etc.).
+
+Why useContext helps:
+Without context, you'd have to pass the user object through many props. With context, you can store the user globally and access it anywhere easily.
