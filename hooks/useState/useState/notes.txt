@@ -1,0 +1,89 @@
+import { useState } from 'react'
+function Snap(){
+  return (<>My name is abc</>)
+}
+function App() {
+  const [show, setShow] = useState(false);
+  
+  return (
+    <>
+    <button onClick={()=>setShow(!show)}>Show snap</button>
+    {show && <Snap/>}           
+                                        //with this condition it will show Snap/or not
+         </>
+  )
+}
+export default App
+
+<button onClick={()=>setShow(!show)}> {show?'Hide':'Show'} </button>            
+                                        //Change will be shown in the button itself;
+
+how to make Modal(modal are like pop ups with button for your decision):
+here is the code for simple modal
+
+import { useState } from 'react'
+import './App.css' // CSS file import
+
+function Snap({ onClose }) {
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <h2>My name is Abhishek</h2>
+        <button className="close-btn" onClick={onClose}>Close</button>
+      </div>
+    </div>
+  )
+}
+
+function App() {
+  const [show, setShow] = useState(false)
+
+  return (
+    <>
+      <button onClick={() => setShow(true)}>Show Modal</button>
+      {show && <Snap onClose={() => setShow(false)} />}             ////Go Easy to understand the condition used to make the modal
+    </>
+  )
+}
+
+export default App
+
+ // CSS file data
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  min-width: 300px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  margin-top: 20px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #1976d2;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #1565c0;
+}
+
+
+
