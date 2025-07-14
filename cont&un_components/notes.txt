@@ -1,0 +1,11 @@
+// Uncontrolled Components:An input field that manages its own state — React doesn't control it directly.
+ex:-React is not tracking what you type.
+-We use ref to access the value.
+Uncontrolled components do NOT re-render on every keystroke because their value is not stored in React state.
+
+
+//Controlled Components:
+An input field that React fully controls using useState.
+ex:-Uses useState to store the value.
+-React updates the state on every key press.
+-quite the oppo.
