@@ -1,0 +1,38 @@
+React Router is a routing library for React applications. 
+It enables navigation without reloading the page, making the application faster and more dynamic
+
+Types of routing:
+Type	            Use Case	                                Example Path
+BrowserRouter	    Most common,clean URLs	                    /about
+HashRouter	        For static servers (like GitHub Pages)	    /#/about
+Nested Routing	    Pages within pages (like dashboard tabs)	/dashboard/profile
+Dynamic Routing	    When URL changes with ID or slug	        /user/101
+Redirects	        Navigate on action (login, button click)after login → /dashboard
+Fallback Route	    Catch-all for 404 pages	                    /some/invalid/path
+
+
+What is declarative Routing ?
+You define your routes using JSX components, and React Router handles the rest automatically.
+//<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+</Routes>
+//
+You don’t manually tell React to check the URL or mount/unmount components — React Router handles it.
+
+//const url = window.location.pathname;
+if (url === "/about") {
+  // manually render about component
+}
+//🚫 You don’t write low-level URL matching logic.
+
+
+forSetup:
+npm install react-router-dom
+
+why routing is imp->
+1. Multiple pages in one app
+2. Cleaner user experience
+3. URL reflects where you are
+4. Easy to manage content
+5. Scalability
