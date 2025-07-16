@@ -1,5 +1,6 @@
 React Router is a routing library for React applications. 
-It enables navigation without reloading the page, making the application faster and more dynamic
+ Instead of the browser fetching a new HTML page from a server for each URL change,
+  React Router intercepts the URL and renders the correct React component, making the app feel faster and more fluid.
 
 Types of routing:
 Type	            Use Case	                                Example Path
@@ -36,3 +37,44 @@ why routing is imp->
 3. URL reflects where you are
 4. Easy to manage content
 5. Scalability
+
+
+//BrowserRouter: enables client side routing(page opens without the reload) with browser history Api.
+//Routes:Defining different routes and their corresponding components.
+//Link:Creating links to navigate between different routes
+
+
+{/* <Route path='/*' element={<h3>Error 404 Page not found</h3>}></Route> */} : if URL is not present then show Error 404
+        <Route path='/*'element={<Navigate to='/'/>}></Route> :if URL is not present than redirect to Home Page
+
+//<Outlet/>: lets you show what inside of Child (from Nested Routes) which is under Parent Route
+like Parent is: College,
+child is: Student details,contacts (links)
+Outlet is used inside Parent to show child messages.
+
+
+//index Route:to render by default when on a link 
+<link index element={<Student/>}
+
+
+//Route Prefix:
+A route prefix is a consistent segment at the beginning of a URL path used to group related routes. Its primary purpose is URL organization.
+Think of it like folders on your computer. You put all admin-related pages in an /admin folder.
+Example Use Cases:
+Grouping all admin pages: /admin/users, /admin/products
+API versioning: /api/v1/posts, /api/v2/posts
+
+
+
+//Dynamic Routing:
+This is achieved by using a dynamic segment in your route path, which is denoted by a colon (:), like :userId. 
+You can then access the value of this segment using the useParams hook.
+
+
+
+//optional Routing:
+You can make a route segment optional by adding a ? to the end of the segment.
+<Route path=":lang?/categories" element={<Categories />} />
+
+You can have optional static segments, too:
+<Route path="users/:userId/edit?" element={<User />} />
