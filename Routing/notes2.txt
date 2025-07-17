@@ -1,0 +1,32 @@
+//createBrowserRouter:
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />
+  },
+  {
+    path: "/about",
+    element: <About />
+  },
+  {
+    path: "/toys",
+    element: <Toys />
+  }
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+//rest link part is same;
+
+
+Public Route:- Accessible by everyone.Doesn’t require login. Examples: /login, /signup, /about
+Private Route:- Accessible only by authenticated users.Redirects to login if not logged in. Example: /dashboard, /profile
+like once you have logged in, you cannot go to login page again without logout
